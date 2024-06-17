@@ -7,7 +7,7 @@
     <h1>Face Verification</h1>
     <form action="/upload_claim" method="post" enctype="multipart/form-data">
         <h2>Upload Claim Images (5 images)</h2>
-        <p>(Note: If you want to test a image in which person is wearing something (ex. gogals, glasses, etc.), then please also upload the real image of the person wearing the similar thing, otherwise you may get wrong results. Similarly if in a test image, person has beard/ moustache, then please try to also upload the real image in which person has beard or moustache respectively. And if your test image is of clean shaved person, then please upload atleast one real clean shaved image of the same person. This will give you the accurate results.)</p>
+        <p>(Note: If you want to test a image in which person is wearing something (ex. goggles, glasses, etc.), then please also upload the real image of the person wearing the similar thing, otherwise you may get wrong results. Similarly if in a test image, person has beard/ moustache, then please try to also upload the real image in which person has beard or moustache respectively. And if your test image is of clean shaved person, then please upload atleast one real clean shaved image of the same person. This will give you the accurate results.)</p>
         <input type="file" name="claim" multiple required>
         <input type="submit" value="Upload Claim Images">
     </form>
@@ -15,14 +15,6 @@
         <h2>Upload Test Image</h2>
         <input type="file" name="test" required>
         <input type="submit" value="Upload Test Image">
-    </form>
-    <form action="/crop_faces" method="post">
-        <h2>Crop Faces</h2>
-        <input type="submit" value="Crop Faces">
-    </form>
-    <form action="/extract_features" method="post">
-        <h2>Extract Features</h2>
-        <input type="submit" value="Extract Features">
     </form>
     <form action="/evaluate" method="post">
         <h2>Evaluate</h2>

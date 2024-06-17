@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, redirect, url_for
 from pymongo import MongoClient
 from werkzeug.utils import secure_filename
 import os
@@ -146,6 +146,10 @@ def upload_claim_images():
         image.save(image_path)
         db.images.insert_one({'name': filename, 'type': 'claim', 'path': image_path})
 
+    # Automatically crop faces and extract features
+    crop_faces_from_folder(app.config['CLAIM_FOLDER'], app.config['CROP_CLAIM_FOLDER'])
+    extract_features_from_folder(app.config['CROP_CLAIM_FOLDER'], app.config['FEATURE_CLAIM_FOLDER'])
+
     return 'Claim images uploaded successfully.'
 
 @app.route('/upload_test', methods=['POST'])
@@ -162,15 +166,17 @@ def upload_test_image():
     test_image.save(test_image_path)
     db.images.insert_one({'name': filename, 'type': 'test', 'path': test_image_path})
 
+    # Automatically crop faces and extract features
+    crop_faces_from_folder(app.config['TEST_FOLDER'], app.config['CROP_TEST_FOLDER'])
+    extract_features_from_folder(app.config['CROP_TEST_FOLDER'], app.config['FEATURE_TEST_FOLDER'])
+
     return 'Test image uploaded successfully.'
 
-@app.route('/crop_faces', methods=['POST'])
-def crop_faces():
+def crop_faces_from_folder(input_folder, output_folder):
     with open('./config/model_conf.yaml') as f:
         model_conf = yaml.load(f, yaml.FullLoader)
 
     model_path = 'models'
-    # detect init
     scene = 'non-mask'
     model_category = 'face_detection'
     model_name = model_conf[scene][model_category]
@@ -178,47 +184,28 @@ def crop_faces():
     modelDet, cfgDet = faceDetModelLoader.load_model()
     faceDetModelHandler = FaceDetModelHandler(modelDet, 'cuda:0', cfgDet)
 
-    # alignment init
     model_category = 'face_alignment'
     model_name = model_conf[scene][model_category]
     faceAlignModelLoader = FaceAlignModelLoader(model_path, model_category, model_name)
     modelAli, cfgAli = faceAlignModelLoader.load_model()
     faceAlignModelHandler = FaceAlignModelHandler(modelAli, 'cuda:0', cfgAli)
 
-    # face cropper
     face_cropper = FaceRecImageCropper()
 
-    clear_directory(app.config['CROP_CLAIM_FOLDER'])
-    clear_directory(app.config['CROP_TEST_FOLDER'])
+    clear_directory(output_folder)
 
-    for image in os.listdir(app.config['CLAIM_FOLDER']):
-        image_path = os.path.join(app.config['CLAIM_FOLDER'], image)
-        AlignedOneImageUsingFaceXAlignment(app.config['CLAIM_FOLDER'], app.config['CROP_CLAIM_FOLDER'], image_path, faceDetModelHandler, faceAlignModelHandler, face_cropper)
+    for image in os.listdir(input_folder):
+        image_path = os.path.join(input_folder, image)
+        AlignedOneImageUsingFaceXAlignment(input_folder, output_folder, image_path, faceDetModelHandler, faceAlignModelHandler, face_cropper)
 
-    for image in os.listdir(app.config['TEST_FOLDER']):
-        image_path = os.path.join(app.config['TEST_FOLDER'], image)
-        AlignedOneImageUsingFaceXAlignment(app.config['TEST_FOLDER'], app.config['CROP_TEST_FOLDER'], image_path, faceDetModelHandler, faceAlignModelHandler, face_cropper)
+def extract_features_from_folder(input_folder, output_folder):
+    clear_directory(output_folder)
 
-    return 'Faces cropped successfully.'
-
-@app.route('/extract_features', methods=['POST'])
-def extract_features_route():
-    clear_directory(app.config['FEATURE_CLAIM_FOLDER'])
-    clear_directory(app.config['FEATURE_TEST_FOLDER'])
-
-    for image in os.listdir(app.config['CROP_CLAIM_FOLDER']):
-        image_path = os.path.join(app.config['CROP_CLAIM_FOLDER'], image)
+    for image in os.listdir(input_folder):
+        image_path = os.path.join(input_folder, image)
         features = extract_features(image_path)
-        feature_path = os.path.join(app.config['FEATURE_CLAIM_FOLDER'], os.path.splitext(image)[0] + '.npy')
+        feature_path = os.path.join(output_folder, os.path.splitext(image)[0] + '.npy')
         np.save(feature_path, features)
-
-    for image in os.listdir(app.config['CROP_TEST_FOLDER']):
-        image_path = os.path.join(app.config['CROP_TEST_FOLDER'], image)
-        features = extract_features(image_path)
-        feature_path = os.path.join(app.config['FEATURE_TEST_FOLDER'], os.path.splitext(image)[0] + '.npy')
-        np.save(feature_path, features)
-
-    return 'Feature extraction completed successfully.'
 
 @app.route('/evaluate', methods=['POST'])
 def evaluate():
@@ -248,11 +235,12 @@ def evaluate():
 
     image_status = 'fake' if avg_dissimilarity > 0.55 else 'real'
 
-    # Return the JSON response with the nearest dissimilarity and image status
-    return jsonify({
+    result = {
         'nearest_dissimilarity': avg_dissimilarity,
         'image_status': image_status
-    })
+    }
+
+    return render_template('result.html', result=result)
 
 if __name__ == '__main__':
     app.run(debug=True, port=3000)

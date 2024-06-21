@@ -1,95 +1,80 @@
-INFO 2024-06-17 22:34:16 _internal.py: 97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:3000
-INFO 2024-06-17 22:34:16 _internal.py: 97] [33mPress CTRL+C to quit[0m
-INFO 2024-06-17 22:34:16 _internal.py: 97]  * Restarting with stat
-WARNING 2024-06-17 22:34:23 _internal.py: 97]  * Debugger is active!
-INFO 2024-06-17 22:34:23 _internal.py: 97]  * Debugger PIN: 280-840-987
-INFO 2024-06-17 22:34:27 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:34:27] "GET / HTTP/1.1" 200 -
-INFO 2024-06-17 22:34:28 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:34:28] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-INFO 2024-06-17 22:49:37 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\project3\\app.py', reloading
-INFO 2024-06-17 22:49:39 _internal.py: 97]  * Restarting with stat
-INFO 2024-06-17 22:50:04 _internal.py: 97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:3000
-INFO 2024-06-17 22:50:04 _internal.py: 97] [33mPress CTRL+C to quit[0m
-INFO 2024-06-17 22:50:04 _internal.py: 97]  * Restarting with stat
-WARNING 2024-06-17 22:50:12 _internal.py: 97]  * Debugger is active!
-INFO 2024-06-17 22:50:12 _internal.py: 97]  * Debugger PIN: 280-840-987
-INFO 2024-06-17 22:50:13 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:50:13] "GET / HTTP/1.1" 200 -
-INFO 2024-06-17 22:50:57 FaceDetModelLoader.py: 16] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
-INFO 2024-06-17 22:50:57 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 22:50:57 FaceDetModelLoader.py: 34] Successfully loaded the face detection model!
-INFO 2024-06-17 22:50:57 FaceAlignModelLoader.py: 16] Start to analyze the face landmark model, model path: models, model category: face_alignment，model name: face_alignment_1.0
-INFO 2024-06-17 22:50:57 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 22:50:58 FaceAlignModelLoader.py: 29] Successfully loaded the face landmark model!
-INFO 2024-06-17 22:51:04 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:51:04] "POST /upload_claim HTTP/1.1" 200 -
-INFO 2024-06-17 22:51:33 FaceDetModelLoader.py: 16] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
-INFO 2024-06-17 22:51:33 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 22:51:33 FaceDetModelLoader.py: 34] Successfully loaded the face detection model!
-INFO 2024-06-17 22:51:33 FaceAlignModelLoader.py: 16] Start to analyze the face landmark model, model path: models, model category: face_alignment，model name: face_alignment_1.0
-INFO 2024-06-17 22:51:33 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 22:51:34 FaceAlignModelLoader.py: 29] Successfully loaded the face landmark model!
-INFO 2024-06-17 22:51:37 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:51:37] "POST /upload_test HTTP/1.1" 200 -
-INFO 2024-06-17 22:51:40 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:51:40] "POST /evaluate HTTP/1.1" 200 -
-INFO 2024-06-17 22:53:27 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\project3\\app.py', reloading
-INFO 2024-06-17 22:53:29 _internal.py: 97]  * Restarting with stat
-WARNING 2024-06-17 22:53:38 _internal.py: 97]  * Debugger is active!
-INFO 2024-06-17 22:53:38 _internal.py: 97]  * Debugger PIN: 280-840-987
-INFO 2024-06-17 22:58:44 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\project3\\app.py', reloading
-INFO 2024-06-17 22:58:46 _internal.py: 97]  * Restarting with stat
-INFO 2024-06-17 22:59:10 _internal.py: 97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:3000
-INFO 2024-06-17 22:59:10 _internal.py: 97] [33mPress CTRL+C to quit[0m
-INFO 2024-06-17 22:59:10 _internal.py: 97]  * Restarting with stat
-WARNING 2024-06-17 22:59:15 _internal.py: 97]  * Debugger is active!
-INFO 2024-06-17 22:59:15 _internal.py: 97]  * Debugger PIN: 280-840-987
-INFO 2024-06-17 22:59:20 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:59:20] "GET / HTTP/1.1" 200 -
-INFO 2024-06-17 22:59:36 FaceDetModelLoader.py: 16] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
-INFO 2024-06-17 22:59:36 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 22:59:36 FaceDetModelLoader.py: 34] Successfully loaded the face detection model!
-INFO 2024-06-17 22:59:36 FaceAlignModelLoader.py: 16] Start to analyze the face landmark model, model path: models, model category: face_alignment，model name: face_alignment_1.0
-INFO 2024-06-17 22:59:36 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 22:59:36 FaceAlignModelLoader.py: 29] Successfully loaded the face landmark model!
-INFO 2024-06-17 22:59:41 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:59:41] "POST /upload_claim HTTP/1.1" 200 -
-INFO 2024-06-17 22:59:55 FaceDetModelLoader.py: 16] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
-INFO 2024-06-17 22:59:55 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 22:59:55 FaceDetModelLoader.py: 34] Successfully loaded the face detection model!
-INFO 2024-06-17 22:59:55 FaceAlignModelLoader.py: 16] Start to analyze the face landmark model, model path: models, model category: face_alignment，model name: face_alignment_1.0
-INFO 2024-06-17 22:59:55 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 22:59:55 FaceAlignModelLoader.py: 29] Successfully loaded the face landmark model!
-INFO 2024-06-17 22:59:57 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 22:59:57] "POST /upload_test HTTP/1.1" 200 -
-INFO 2024-06-17 23:00:48 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 23:00:48] "GET / HTTP/1.1" 200 -
-INFO 2024-06-17 23:00:51 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 23:00:51] "GET / HTTP/1.1" 200 -
-INFO 2024-06-17 23:01:15 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 23:01:15] "[33mGET /json HTTP/1.1[0m" 404 -
-INFO 2024-06-17 23:04:35 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\project3\\app.py', reloading
-INFO 2024-06-17 23:04:36 _internal.py: 97]  * Restarting with stat
-INFO 2024-06-17 23:04:54 _internal.py: 97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:3000
-INFO 2024-06-17 23:04:54 _internal.py: 97] [33mPress CTRL+C to quit[0m
-INFO 2024-06-17 23:04:54 _internal.py: 97]  * Restarting with stat
-WARNING 2024-06-17 23:05:01 _internal.py: 97]  * Debugger is active!
-INFO 2024-06-17 23:05:01 _internal.py: 97]  * Debugger PIN: 280-840-987
-INFO 2024-06-17 23:05:01 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 23:05:01] "GET / HTTP/1.1" 200 -
-INFO 2024-06-17 23:05:16 FaceDetModelLoader.py: 16] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
-INFO 2024-06-17 23:05:16 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 23:05:16 FaceDetModelLoader.py: 34] Successfully loaded the face detection model!
-INFO 2024-06-17 23:05:16 FaceAlignModelLoader.py: 16] Start to analyze the face landmark model, model path: models, model category: face_alignment，model name: face_alignment_1.0
-INFO 2024-06-17 23:05:16 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 23:05:16 FaceAlignModelLoader.py: 29] Successfully loaded the face landmark model!
-INFO 2024-06-17 23:05:20 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 23:05:20] "POST /upload_claim HTTP/1.1" 200 -
-INFO 2024-06-17 23:05:30 FaceDetModelLoader.py: 16] Start to analyze the face detection model, model path: models, model category: face_detection，model name: face_detection_1.0
-INFO 2024-06-17 23:05:30 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 23:05:30 FaceDetModelLoader.py: 34] Successfully loaded the face detection model!
-INFO 2024-06-17 23:05:30 FaceAlignModelLoader.py: 16] Start to analyze the face landmark model, model path: models, model category: face_alignment，model name: face_alignment_1.0
-INFO 2024-06-17 23:05:30 BaseModelLoader.py: 34] Successfully parsed the model configuration file meta.json!
-INFO 2024-06-17 23:05:30 FaceAlignModelLoader.py: 29] Successfully loaded the face landmark model!
-INFO 2024-06-17 23:05:32 _internal.py: 97] 127.0.0.1 - - [17/Jun/2024 23:05:32] "POST /upload_test HTTP/1.1" 200 -
-INFO 2024-06-17 23:44:29 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\project3\\app.py', reloading
-INFO 2024-06-17 23:44:31 _internal.py: 97]  * Restarting with stat
-WARNING 2024-06-17 23:44:38 _internal.py: 97]  * Debugger is active!
-INFO 2024-06-17 23:44:38 _internal.py: 97]  * Debugger PIN: 280-840-987
-INFO 2024-06-17 23:45:12 _internal.py: 97] [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
- * Running on http://127.0.0.1:3000
-INFO 2024-06-17 23:45:12 _internal.py: 97] [33mPress CTRL+C to quit[0m
-INFO 2024-06-17 23:45:12 _internal.py: 97]  * Restarting with stat
-WARNING 2024-06-17 23:45:19 _internal.py: 97]  * Debugger is active!
-INFO 2024-06-17 23:46:27 _internal.py: 97]  * Restarting with stat
+INFO 2024-06-21 20:48:42 _internal.py: 97]  * Restarting with watchdog (windowsapi)
+DEBUG 2024-06-21 20:48:46 cmd.py: 1253] Popen(['git', 'version'], cwd=E:\Aiwi\Common\project3, stdin=None, shell=False, universal_newlines=False)
+DEBUG 2024-06-21 20:48:46 cmd.py: 1253] Popen(['git', 'version'], cwd=E:\Aiwi\Common\project3, stdin=None, shell=False, universal_newlines=False)
+DEBUG 2024-06-21 20:48:46 auth.py: 50] Trying paths: ['C:\\Users\\Hp\\.docker\\config.json', 'C:\\Users\\Hp\\.dockercfg']
+DEBUG 2024-06-21 20:48:46 auth.py: 54] Found file at path: C:\Users\Hp\.docker\config.json
+DEBUG 2024-06-21 20:48:46 auth.py: 242] Found 'credsStore' section
+WARNING 2024-06-21 20:48:49 _internal.py: 97]  * Debugger is active!
+INFO 2024-06-21 20:48:49 _internal.py: 97]  * Debugger PIN: 280-840-987
+INFO 2024-06-21 20:48:49 _internal.py: 97] 127.0.0.1 - - [21/Jun/2024 20:48:49] "POST /evaluate HTTP/1.1" 200 -
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\api_usage\\face_alignment.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\api_usage\\face_crop.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\api_usage\\face_detect.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\api_usage\\face_feature.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\api_usage\\face_parsing.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\api_usage\\face_pipline.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\AttentionNets.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\EfficientNets.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\GhostNet.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\HRNet.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\LightCNN.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\MobileFaceNets.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\RepVGG.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\ResNets.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\Swin_Transformer.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\TF_NAS.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\backbone_def - Copy.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\backbone_def.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\resnest\\__init__.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\resnest\\ablation.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\resnest\\resnest.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\resnest\\resnet.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\backbone\\resnest\\splat.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\image_cropper\\BaseImageCropper.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\image_cropper\\arcface_cropper\\FaceRecImageCropper.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_handler\\BaseModelHandler.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_handler\\face_alignment\\FaceAlignModelHandler.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_handler\\face_detection\\FaceDetModelHandler.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_handler\\face_parsing\\FaceParsingModelHandler.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_handler\\face_recognition\\FaceRecModelHandler.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_loader\\BaseModelLoader.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_loader\\face_alignment\\FaceAlignModelLoader.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_loader\\face_detection\\FaceDetModelLoader.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_loader\\face_parsing\\FaceParsingModelLoader.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\core\\model_loader\\face_recognition\\FaceRecModelLoader.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\factor\\FaceX-Zoo\\backbone\\resnet50.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\factor\\FaceX-Zoo\\data_processor\\test_dataset.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\factor\\FaceX-Zoo\\face_sdk\\extract_feature.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\factor\\FaceX-Zoo\\test_protocol\\eval.py', reloading
+INFO 2024-06-21 20:49:21 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\factor\\FaceX-Zoo\\test_protocol\\extract.py', reloading
+INFO 2024-06-21 20:49:23 _internal.py: 97]  * Restarting with watchdog (windowsapi)
+DEBUG 2024-06-21 20:49:29 cmd.py: 1253] Popen(['git', 'version'], cwd=E:\Aiwi\Common\project3, stdin=None, shell=False, universal_newlines=False)
+DEBUG 2024-06-21 20:49:29 cmd.py: 1253] Popen(['git', 'version'], cwd=E:\Aiwi\Common\project3, stdin=None, shell=False, universal_newlines=False)
+DEBUG 2024-06-21 20:49:29 auth.py: 50] Trying paths: ['C:\\Users\\Hp\\.docker\\config.json', 'C:\\Users\\Hp\\.dockercfg']
+DEBUG 2024-06-21 20:49:29 auth.py: 54] Found file at path: C:\Users\Hp\.docker\config.json
+DEBUG 2024-06-21 20:49:29 auth.py: 242] Found 'credsStore' section
+WARNING 2024-06-21 20:49:33 _internal.py: 97]  * Debugger is active!
+INFO 2024-06-21 20:49:33 _internal.py: 97]  * Debugger PIN: 280-840-987
+INFO 2024-06-21 20:50:26 _internal.py: 97] 127.0.0.1 - - [21/Jun/2024 20:50:26] "GET /get_all_files HTTP/1.1" 200 -
+INFO 2024-06-21 20:56:25 _internal.py: 97]  * Detected change in 'E:\\myenv\\Lib\\site-packages\\requests\\models.py', reloading
+INFO 2024-06-21 20:56:26 _internal.py: 97]  * Restarting with watchdog (windowsapi)
+DEBUG 2024-06-21 20:56:32 cmd.py: 1253] Popen(['git', 'version'], cwd=E:\Aiwi\Common\project3, stdin=None, shell=False, universal_newlines=False)
+DEBUG 2024-06-21 20:56:32 cmd.py: 1253] Popen(['git', 'version'], cwd=E:\Aiwi\Common\project3, stdin=None, shell=False, universal_newlines=False)
+DEBUG 2024-06-21 20:56:32 auth.py: 50] Trying paths: ['C:\\Users\\Hp\\.docker\\config.json', 'C:\\Users\\Hp\\.dockercfg']
+DEBUG 2024-06-21 20:56:32 auth.py: 54] Found file at path: C:\Users\Hp\.docker\config.json
+DEBUG 2024-06-21 20:56:32 auth.py: 242] Found 'credsStore' section
+WARNING 2024-06-21 20:56:36 _internal.py: 97]  * Debugger is active!
+INFO 2024-06-21 20:56:36 _internal.py: 97]  * Debugger PIN: 280-840-987
+INFO 2024-06-21 21:00:05 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\app.py', reloading
+INFO 2024-06-21 21:00:05 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\app.py', reloading
+INFO 2024-06-21 21:00:05 _internal.py: 97]  * Detected change in 'E:\\Aiwi\\Common\\project3\\app.py', reloading
+INFO 2024-06-21 21:00:06 _internal.py: 97]  * Restarting with watchdog (windowsapi)
+DEBUG 2024-06-21 21:00:11 cmd.py: 1253] Popen(['git', 'version'], cwd=E:\Aiwi\Common\project3, stdin=None, shell=False, universal_newlines=False)
+DEBUG 2024-06-21 21:00:11 cmd.py: 1253] Popen(['git', 'version'], cwd=E:\Aiwi\Common\project3, stdin=None, shell=False, universal_newlines=False)
+DEBUG 2024-06-21 21:00:11 auth.py: 50] Trying paths: ['C:\\Users\\Hp\\.docker\\config.json', 'C:\\Users\\Hp\\.dockercfg']
+DEBUG 2024-06-21 21:00:11 auth.py: 54] Found file at path: C:\Users\Hp\.docker\config.json
+DEBUG 2024-06-21 21:00:11 auth.py: 242] Found 'credsStore' section
+WARNING 2024-06-21 21:00:15 _internal.py: 97]  * Debugger is active!
+INFO 2024-06-21 21:00:15 _internal.py: 97]  * Debugger PIN: 280-840-987
+INFO 2024-06-21 21:00:15 _internal.py: 97] 127.0.0.1 - - [21/Jun/2024 21:00:15] "POST /evaluate HTTP/1.1" 200 -
+INFO 2024-06-21 21:03:04 _internal.py: 97] 127.0.0.1 - - [21/Jun/2024 21:03:04] "[36mGET /evaluate?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -

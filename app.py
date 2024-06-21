@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, render_template, redirect, url_for
+from flask import Flask, request,jsonify, render_template, redirect, url_for,Response
+import requests
 from pymongo import MongoClient
 from werkzeug.utils import secure_filename
 import os
@@ -154,7 +155,7 @@ def upload_claim_images():
 
 @app.route('/upload_test', methods=['POST'])
 def upload_test_image():
-    test_image = request.files.get('test')
+    test_image = requests.files.get('test')
 
     if not test_image:
         return 'Please upload a test image.'
@@ -242,5 +243,116 @@ def evaluate():
 
     return render_template('result.html', result=result)
 
+API_KEY = '$2a$10$B5k1PY5NCDNguz.l2zt0A.G.L3Z/smrrFZ3VgTcfJaLJGxtEpc3BC'
+
+
+@app.route('/get_presigned_url', methods=['POST'])
+def get_presigned_url():
+    data = request.json
+    if data is None or not isinstance(data, dict):
+        return jsonify({'error': 'Invalid JSON format'}), 400
+
+    file_name = data.get('fileName')
+    file_size = data.get('fileSize')
+    show_audio_result = False
+
+    payload = {
+        "fileName": file_name,
+        "fileSize": file_size,
+        "showAudioResult": show_audio_result
+    }
+
+    headers = {
+        'Content-Type': 'application/json',
+        'X-API-KEY': API_KEY,
+        'Email': 'abhishek@meetkiwi.co',
+        'password': 'SanFrancisco@2024',
+        'Host': 'api.prd.realitydefender.xyz',
+        'fileName': file_name
+    }
+
+    response = requests.post('https://api.prd.realitydefender.xyz/api/files/aws-presigned', json=payload, headers=headers)
+
+    if response.status_code == 200:
+        return jsonify(response.json())
+    else:
+        return jsonify({'error': 'Failed to get presigned URL'}), response.status_code
+
+@app.route('/upload_file', methods=['POST'])
+def upload_file():
+    file = request.files.get('file')
+    file_name = request.form.get('fileName')
+
+    if file is None or file_name is None:
+        return jsonify({'error': 'No file uploaded or filename provided'}), 400
+
+    file_size = len(file.read())
+    file.seek(0)  # Reset file pointer to the beginning after reading its size
+
+    # Get presigned URL
+    try:
+        presigned_url_response = requests.post('http://localhost:3000/get_presigned_url', json={
+            "fileName": file_name,
+            "fileSize": file_size,
+            "showAudioResult": False
+        })
+    except requests.ConnectionError as e:
+        return jsonify({'error': 'Connection to the presigned URL service failed', 'details': str(e)}), 500
+
+    if presigned_url_response.status_code != 200:
+        return Response(response=presigned_url_response.text, status=presigned_url_response.status_code, content_type='application/json')
+
+    presigned_url = presigned_url_response.json().get('response', {}).get('signedUrl')
+          
+    if not presigned_url:
+        return jsonify({'error': 'Failed to get presigned URL'}), 500
+
+    # Upload file to presigned URL
+    headers = {'Content-Type': 'application/octet-stream'}
+    upload_response = requests.put(presigned_url, data=file, headers=headers)
+
+    if upload_response.status_code == 200:
+        return jsonify({'message': 'File uploaded successfully'})
+    else:
+        return jsonify({'error': 'Failed to upload file'}), upload_response.status_code
+
+@app.route('/get_all_files', methods=['GET'])
+def get_all_files():
+    try:
+        headers = {
+            'X-API-KEY': API_KEY,
+            'Host': 'api.prd.realitydefender.xyz'
+        }
+
+        response = requests.get('https://api.prd.realitydefender.xyz/api/media/users', headers=headers)
+        if response.status_code != 200:
+            return jsonify({'error': 'Failed to fetch media data'}), response.status_code
+
+        media_data = response.json()
+        media_list = media_data.get('mediaList', [])  # Updated to 'mediaList' instead of 'response'
+
+        file_statuses = []
+        for media in media_list:
+            models_info = []
+            for model in media.get('models', []):
+                models_info.append({
+                    'name': model.get('name'),
+                    'status': model.get('status'),
+                    'score': model.get('finalScore')
+                })
+
+            file_statuses.append({
+                'fileName': media.get('filename'),  # Updated to 'filename' instead of 'fileName'
+                'status': media.get('overallStatus'),
+                'models': models_info
+            })
+
+        return jsonify({'files': file_statuses})
+    except Exception as e:
+        return jsonify({'error': f'Error in get_all_files: {str(e)}'}), 500
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=3000)
+    
+    

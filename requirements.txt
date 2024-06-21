@@ -1,0 +1,16 @@
+flask
+requests
+pymongo
+werkzeug
+os
+numpy
+torch
+torchvision
+PIL
+urllib
+yaml
+faiss
+shutil
+cv2
+math
+tqdm
